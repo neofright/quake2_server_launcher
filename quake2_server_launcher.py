@@ -3,6 +3,7 @@ import requests
 from lxml import html
 import os
 import subprocess
+import sys
 
 def return_q2_server_strings():
     q2_server_url = 'http://q2servers.com/?s=pd'
@@ -43,8 +44,7 @@ if os.path.isfile(cfg_file):
         for line in cfg_list:
              q2file.write(line + os.linesep)
 
-## using Feral's gamemode seems to run the game in a window. we don't really need
-## the extra performance gains for such an ancient game.
-#subprocess.Popen(['gamemoderun','quake2'])
+if os.uname()[0] == 'Darwin':
+    os.environ["PATH"] += os.pathsep + '/Applications/Quake 2.app/Contents/Resources/'
 subprocess.Popen(['quake2'])
 exit()
