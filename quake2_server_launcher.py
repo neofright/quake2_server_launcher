@@ -3,7 +3,6 @@ import requests
 from lxml import html
 import os
 import subprocess
-import sys
 
 def return_q2_server_strings():
     q2_server_url = 'http://q2servers.com/?s=pd'
