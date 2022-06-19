@@ -19,7 +19,7 @@ def return_q2_server_strings():
 
     server_list = []
     servers = tree.xpath("//*[@class='server']")
-    for i in range(0, 9, 1):
+    for i in range(0, 8, 1):
         for element, attribute, link, pos in servers[i].iterlinks():
             if 'quake2' in link:
                 server_addr = link.replace("quake2://","")
